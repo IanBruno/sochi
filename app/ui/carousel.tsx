@@ -17,7 +17,7 @@ export default function Carousel( {elements, handleClick, currentVideo}) {
             <div style={{display: 'flex', flexDirection: 'row', marginRight: ''}}>
                 {elements.map( (element, index) => {
                         if (currentVideo && currentVideo == element.videoKey)
-                        return <div style={{
+                        return <div key={index} style={{
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'center',
@@ -44,7 +44,7 @@ export default function Carousel( {elements, handleClick, currentVideo}) {
                                         marginRight: '1rem',
                                     }}>{element.title}</h1>
                                 </div>
-                        return <div style={{marginRight: '2rem'}} onClick={() => handleClick(index)}>
+                        return <div key={index} style={{marginRight: '2rem'}} onClick={() => handleClick(index)}>
                             {/*<img src={element.imageSrc} alt={`${altDescription}`} width="200"/>*/}
                             <Image
                                 src={element.imageSrc}
